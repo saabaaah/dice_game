@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generate two dice values</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body{
+			text-align: center; 
+		}
+		#lancer {
+			text-align: center; 
+			margin: 10px;
+			font-size: 18px;
+		}
+		#des_1, #des_2 {
+			text-align: center; 
+			width: 150px;
+			height: 150px;
+			margin: 0px auto;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<button id="lancer">Lancer</button>
+	<div>
+		<img id="des_1" src="dice/dice-b-1.png"/>
+		<img id="des_2" src="dice/dice-b-1.png"/>
+	</div>
+
+	<script type="text/javascript" src="dice/jquery-3.5.1.min.js"></script>
+	
+	<script >
+		$('#lancer').on({
+		    'click': function() {
+		    	// nb aleatoire 1
+		    	var des_aleatoire = Math.floor(Math.random() * 6) +1;
+		    	$("#des_1").attr("src","dice/dice-b-"+des_aleatoire+".png");
+		    	// nb aleatoire 2
+		    	var des_aleatoire_2 = Math.floor(Math.random() * 6) +1;
+		    	$("#des_2").attr("src","dice/dice-b-"+des_aleatoire_2+".png");
+
+		    }
+		});
+
+	</script>
+</body>
+
+</html>
