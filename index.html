@@ -43,21 +43,23 @@
 		    	function generate_dice(){
 		    		time += 100;
 		    		console.log(time);
-			    	// generate random value for the 1st dice
+			    	// generate random value for the 1st dice choosing a red dice
 			    	var random_dice = Math.floor(Math.random() * 6) +1;
-			    	$("#dice_1").attr("src","dice/dice-b-"+random_dice+".png");
-			    	// generate random value for the 2nd dice
+			    	$("#dice_1").attr("src","dice/dice-r-"+random_dice+".png");
+			    	// generate random value for the 2nd dice choosing a red dice
 			    	var random_dice_2 = Math.floor(Math.random() * 6) +1;
-			    	$("#dice_2").attr("src","dice/dice-b-"+random_dice_2+".png");
+			    	$("#dice_2").attr("src","dice/dice-r-"+random_dice_2+".png");
 
 			    	// stop after 4 seconds
 			    	if(time >= 4000){
 				    	// débloquer btn 
 				    	$('#start').attr('disabled', false);
 				    	clearInterval(interval_dice); // stop the function calling
+				    	// change the dices pictures to black
+				    	$("#dice_1").attr("src","dice/dice-b-"+random_dice+".png");
+				    	$("#dice_2").attr("src","dice/dice-b-"+random_dice_2+".png");
 				    }
 			    }
-
 		    }
 		});
 
